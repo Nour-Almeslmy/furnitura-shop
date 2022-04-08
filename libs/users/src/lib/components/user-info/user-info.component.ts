@@ -3,6 +3,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { User } from '../../models/user';
 import { LocalstorageService } from '@furnitura/users';
 import { UsersService } from '../../services/users.service';
+import { CartService } from '@furnitura/orders';
 
 @Component({
   selector: 'users-user-info',
@@ -54,6 +55,7 @@ export class UserInfoComponent implements OnInit, OnDestroy{
   logout()
   {
     this.localStorageToken.removeToken();
+    // this.cartService.emptyCart();
   }
 
 }
